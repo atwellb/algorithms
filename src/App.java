@@ -1,6 +1,6 @@
-import sorting.Insertion;
-import sorting.Merge;
-import sorting.Quick;
+import sort.Insertion;
+import sort.Merge;
+import sort.Quick;
 
 public class App {
 
