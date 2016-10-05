@@ -1,9 +1,14 @@
 import sorting.Insertion;
+import sorting.Merge;
 import sorting.Quick;
 
 public class App {
 
 	public static void main(String[] args) {
+		sorting();
+	}
+
+	private static void sorting() {
 		int[] src = {4, 7, 6, 9, 3, 2, 1, 8, 5, 14, 9, 3, 12, 13};
 
 		int[] i_arr = new int[src.length];
@@ -18,7 +23,8 @@ public class App {
 
 		int[] m_arr = new int[src.length];
 		System.arraycopy(src, 0, m_arr, 0, src.length);
-		
+		Merge.sort(m_arr);
+		print(m_arr);
 	}
 
 	private static void print(int[] arr) {

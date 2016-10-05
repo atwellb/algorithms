@@ -15,14 +15,16 @@ public class Quick {
 	}
 
 	private static int partition(int[] arr, int s, int e) {
-		int partition = arr[e];
+		int partition = arr[e]; // last element
 		int swap = s;
 		for (int i = s; i < e; i++) {
+			// swap everything less than partition into swap
 			if (arr[i] < partition) {
 				swap(arr, i, swap);
 				swap++;
 			}
 		}
+		// swap partition right behind the "low" section
 		swap(arr, swap, e);
 		return swap;
 	}
