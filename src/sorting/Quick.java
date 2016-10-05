@@ -3,10 +3,33 @@ package sorting;
 public class Quick {
 
 	public static void sort(int[] arr) {
-		
+		sort(arr, 0, arr.length - 1);
 	}
 
-	private static int partition() {
-		return -1;
+	private static void sort(int[] arr, int s, int e) {
+		if (s < e) {
+			int p_index = partition(arr, s, e);
+			sort(arr, s, p_index - 1);
+			sort(arr, p_index + 1, e);
+		}
+	}
+
+	private static int partition(int[] arr, int s, int e) {
+		int partition = arr[e];
+		int swap = s;
+		for (int i = s; i < e; i++) {
+			if (arr[i] < partition) {
+				swap(arr, i, swap);
+				swap++;
+			}
+		}
+		swap(arr, swap, e);
+		return swap;
+	}
+
+	private static void swap(int[] arr, int a, int b) {
+		int temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
 	}
 }
